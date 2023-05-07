@@ -23,6 +23,12 @@ describe("fizzbuzz", () => {
     }).toThrow(Error);
   });
 
+  it("should throw an error when values is 101 since the max allowed value is 100", () => {
+    expect(() => {
+      fizzbuzz(101);
+    }).toThrow(Error);
+  });
+
   it("should return the input as string", () => {
     expect(typeof fizzbuzz(1)).toBe("string");
   });
