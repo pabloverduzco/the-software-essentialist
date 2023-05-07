@@ -17,6 +17,12 @@ describe("fizzbuzz", () => {
     expect(fizzbuzz(1)).toBe("1");
   });
 
+  it("should throw an error when values is 0 since the minimum allowed value is 1", () => {
+    expect(() => {
+      fizzbuzz(0);
+    }).toThrow(Error);
+  });
+
   it("should return the input as string", () => {
     expect(typeof fizzbuzz(1)).toBe("string");
   });
