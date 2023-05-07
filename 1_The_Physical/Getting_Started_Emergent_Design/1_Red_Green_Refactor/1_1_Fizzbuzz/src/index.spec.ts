@@ -9,6 +9,10 @@ describe("fizzbuzz", () => {
     expect(fizzbuzz(5)).toBe("Buzz");
   });
 
+  it("should return 'FizzBuzz' when a value is both multiple of three and multiple of three", () => {
+    expect(fizzbuzz(30)).toBe("FizzBuzz");
+  });
+
   it("should return the input as string", () => {
     expect(typeof fizzbuzz(1)).toBe("string");
   });
