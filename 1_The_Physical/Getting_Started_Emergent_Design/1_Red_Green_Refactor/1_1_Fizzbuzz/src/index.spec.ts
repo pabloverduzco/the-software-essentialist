@@ -13,6 +13,10 @@ describe("fizzbuzz", () => {
     expect(fizzbuzz(30)).toBe("FizzBuzz");
   });
 
+  it("should return '1' as string since the number isn't a multiple of three or five", () => {
+    expect(fizzbuzz(1)).toBe("1");
+  });
+
   it("should return the input as string", () => {
     expect(typeof fizzbuzz(1)).toBe("string");
   });
