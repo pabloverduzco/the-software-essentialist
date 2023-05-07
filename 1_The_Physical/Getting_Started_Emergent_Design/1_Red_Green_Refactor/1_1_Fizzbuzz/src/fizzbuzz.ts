@@ -1,5 +1,6 @@
-export default function fizzbuzz(input: number): string {
-  if (input % 3 === 0) return "Fizz";
+export default function fizzbuzz(value: number): string {
+  if (value % 3 === 0) return "Fizz";
+  if (value % 5 === 0) return "Buzz";
 
   return "";
 }
