@@ -1,5 +1,5 @@
 export default class PalindromeChecker {
   isPalindrome(word: string): boolean {
-    return true;
+    return word.split("").reverse().join("") === word;
   }
 }
