@@ -5,4 +5,9 @@ describe("palindrome checker", () => {
     let palindromeChecker = new PalindromeChecker();
     expect(palindromeChecker.isPalindrome("mom")).toBe(true);
   });
+
+  it("should return 'false' when 'bill' is the input since this is not a palindrome", () => {
+    let palindromeChecker = new PalindromeChecker();
+    expect(palindromeChecker.isPalindrome("bill")).toBe(false);
+  });
 });
