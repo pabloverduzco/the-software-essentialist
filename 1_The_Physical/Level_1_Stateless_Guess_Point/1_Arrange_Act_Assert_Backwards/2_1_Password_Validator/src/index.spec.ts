@@ -7,6 +7,27 @@ beforeEach(() => {
 })
 
 describe('password validator', () => {
+  test('should return not uppercase characters and invalid length error when "pwd1" is used as password due a lack of uppercase characters and containing just 4 chars', () => {
+    const password = "pwd1"
+
+    const result = passwordValidator.validate(password)
+    
+    expect(result.isValid).toBe(false)
+    expect(result.errors).toHaveLength(2)
+    expect(result.errors).toContain("NotUppercaseCharacters")
+    expect(result.errors).toContain("InvalidLength")
+  })
+
+  test('should return not uppercase characters error when "maxwell1_c" is used as password due a lack of uppercase characters', () => {
+    const password = "maxwell1_c"
+
+    const result = passwordValidator.validate(password)
+    
+    expect(result.isValid).toBe(false)
+    expect(result.errors).toHaveLength(1)
+    expect(result.errors).toContain("NotUppercaseCharacters")
+  })
+
   test('should return not uppercase characters error when "maxwell1_c" is used as password due a lack of uppercase characters', () => {
     const password = "maxwell1_c"
 
