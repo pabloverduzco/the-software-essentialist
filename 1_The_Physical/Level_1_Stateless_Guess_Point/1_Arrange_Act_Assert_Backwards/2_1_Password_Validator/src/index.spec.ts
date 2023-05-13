@@ -7,6 +7,18 @@ beforeEach(() => {
 })
 
 describe('password validator', () => {
+  test('should return not uppercase characters, invalid length and no digits errors when empty value is used as password', () => {
+    const password = ""
+
+    const result = passwordValidator.validate(password)
+    
+    expect(result.isValid).toBe(false)
+    expect(result.errors).toHaveLength(3)
+    expect(result.errors).toContain("NotDigits")
+    expect(result.errors).toContain("NotUppercaseCharacters")
+    expect(result.errors).toContain("InvalidLength")
+  })
+
   test('should return not uppercase characters and invalid length error when "pwd1" is used as password due a lack of uppercase characters and containing just 4 chars', () => {
     const password = "pwd1"
 
