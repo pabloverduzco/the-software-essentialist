@@ -8,6 +8,10 @@ export class PasswordValidator {
         {
             "regex": /^.{5,15}$/g,
             "message": "InvalidLength"
+        },
+        {
+            "regex": /[0-9]/g,
+            "message": "NotDigits"
         }
     ]
 
