@@ -7,6 +7,15 @@ beforeEach(() => {
 })
 
 describe('password validator', () => {
+  test('should return that "Admin123" is a valid password because containts at least one digit, uppercase characters is in a valid length range', () => {
+    const password = "Admin123"
+
+    const result = passwordValidator.validate(password)
+    
+    expect(result.isValid).toBe(true)
+    expect(result.errors).toHaveLength(0)
+  })
+
   test('should return not uppercase characters, invalid length and no digits errors when empty value is used as password', () => {
     const password = ""
 
