@@ -8,6 +8,7 @@ describe('password validator', () => {
     const result = passwordValidator.validate(password)
     
     expect(result.isValid).toBe(false)
+    expect(result.errors).toHaveLength(1)
     expect(result.errors).toContain("InvalidLength")
   })
 })
